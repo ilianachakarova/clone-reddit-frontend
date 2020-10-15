@@ -17,3 +17,7 @@
   .sidebar-view-subreddit {
     height: 280px;
   }
+
+  .show-button{
+    margin-left: 10px;
+  }

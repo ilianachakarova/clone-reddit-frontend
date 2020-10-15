@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { SubredditModel } from './subreddit-response';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,5 +17,9 @@ export class SubredditService {
   createSubreddit(subredditModel: SubredditModel): Observable<SubredditModel> {
     return this.http.post<SubredditModel>('http://localhost:8000/api/subreddit',
       subredditModel);
+  }
+
+  getSubredditById(id:number):Observable<SubredditModel>{
+    return this.http.get<SubredditModel>('http://localhost:8000/api/subreddit/' + id);
   }
 }

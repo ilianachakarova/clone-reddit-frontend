@@ -35,6 +35,7 @@ export class ViewPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPostById();
+    console.log(' i am in init method')
     this.getCommentsForPost();
   }
 
@@ -51,6 +52,7 @@ export class ViewPostComponent implements OnInit {
   private getPostById() {
     this.postService.getPost(this.postId).subscribe(data => {
       this.post = data;
+      console.log('i am in post service')
     }, error => {
       throwError(error);
     });

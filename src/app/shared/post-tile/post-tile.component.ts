@@ -17,6 +17,7 @@ export class PostTileComponent implements OnInit {
 
   faComments = faComments;
   @Input() posts: Array<PostModel>;
+  
 
   constructor(private router: Router, private postService: PostService) {
     this.postService.getAllPosts().subscribe(data=>{
@@ -25,14 +26,11 @@ export class PostTileComponent implements OnInit {
     })
    }
 
- 
-
-  
-
   ngOnInit(): void {
   }
 
   goToPost(id: number): void {
+    console.log('i am in post-tile componenet in go to post method')
     this.router.navigateByUrl('/view-post/' + id);
   }
 }
