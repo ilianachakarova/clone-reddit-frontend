@@ -20,10 +20,10 @@ export class ViewSubredditComponent implements OnInit {
     }
 
   ngOnInit(): void {
-   this.getPostById();
+   this.getSubreddit();
   }
 
-  getPostById(){
+  getSubreddit(){
     this.subredditService.getSubredditById(this.subredditId).subscribe(data=>{
       this.subredditModel = data;
       console.log('i am in the getPostById method ');
