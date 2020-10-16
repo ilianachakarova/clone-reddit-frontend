@@ -4,16 +4,17 @@
       <div class="col-md-9">
         <div class="row post">
           <div class="col-md-1">
-            <app-vote-button [subredditModel]="subredditModel"></app-vote-button>
+            <app-vote-button></app-vote-button>
+            <!-- [subredditModel]="subredditModel" -->
           </div>
           <div class="col-md-11" style="background-color: beige;">
             <span>
-              <span class="subreddit-text"><a class="post-url" href="">{{subredditModel.name}}</a></span>
+              <span class="subreddit-text"><a class="post-url" href="">Test</a></span>
               <br>
               <span><strong> Description </strong></span>
-                <span> {{subredditModel.description}} </span>
+                <span>Test </span>
                 <br>
-                <span><strong>Number of posts: </strong></span> {{subredditModel.numberOfPosts}}
+                <span><strong>Number of posts: </strong></span> 0
               
             </span>
             <hr />
