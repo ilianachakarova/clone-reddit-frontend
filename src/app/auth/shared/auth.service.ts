@@ -25,11 +25,11 @@ export class AuthService {
   }
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
-    return this.httpClient.post('http://localhost:8000/api/auth/signup', signupRequestPayload, { responseType: 'text' });
+    return this.httpClient.post('https://springboot-blog-api/api/auth/signup', signupRequestPayload, { responseType: 'text' });
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
-    return this.httpClient.post<LoginResponse>('http://localhost:8000/api/auth/login',
+    return this.httpClient.post<LoginResponse>('https://springboot-blog-api/api/auth/login',
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
@@ -60,7 +60,7 @@ export class AuthService {
   }
 
   logout() {
-    this.httpClient.post('http://localhost:8000/api/auth/logout', this.refreshTokenPayload,
+    this.httpClient.post('https://springboot-blog-api/api/auth/logout', this.refreshTokenPayload,
       { responseType: 'text' })
       .subscribe(data => {
         console.log(data);
