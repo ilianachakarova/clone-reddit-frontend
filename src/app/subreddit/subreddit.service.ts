@@ -11,15 +11,15 @@ export class SubredditService {
   constructor(private http: HttpClient) { }
 
   getAllSubreddits(): Observable<Array<SubredditModel>> {
-    return this.http.get<Array<SubredditModel>>('http://localhost:8000/api/subreddit');
+    return this.http.get<Array<SubredditModel>>('https://springboot-blog-api.herokuapp.com/api/subreddit');
   }
 
   createSubreddit(subredditModel: SubredditModel): Observable<SubredditModel> {
-    return this.http.post<SubredditModel>('http://localhost:8000/api/subreddit',
+    return this.http.post<SubredditModel>('https://springboot-blog-api.herokuapp.com/api/subreddit',
       subredditModel);
   }
 
   getSubredditById(id:number):Observable<SubredditModel>{
-    return this.http.get<SubredditModel>('http://localhost:8000/api/subreddit/' + id);
+    return this.http.get<SubredditModel>('https://springboot-blog-api.herokuapp.com/api/subreddit/' + id);
   }
 }
